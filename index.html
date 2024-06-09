@@ -27,13 +27,23 @@
             <h2>プティガトー</h2>
             <div class="grid-container">
                 <article>
-                    <img src="http://avenir.mond.jp/images/avenir.png" alt="アベニール" class="clickable">
+                    <div class="img-container">
+                        <img src="http://avenir.mond.jp/images/avenir.png" alt="アベニール" class="clickable">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                        </div>
+                    </div>
                     <h3>アベニール</h3>
                     <h4>注意書き</h4>
                     <p class="modal-text">特製の生クリームをふわふわのスポンジ生地にたっぷり詰めた看板商品</p>
                 </article>
                 <article>
-                    <img src="http://avenir.mond.jp/images/pddin.png" alt="プレミアムプリン" class="clickable">
+                    <div class="img-container">
+                        <img src="http://avenir.mond.jp/images/pddin.png" alt="プレミアムプリン" class="clickable">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                        </div>
+                    </div>
                     <h3>プレミアムプリン</h3>
                     <h4>注意書き</h4>
                     <p class="modal-text">知多半島で採れた新鮮な卵を使ったプリン</p>
@@ -82,11 +92,12 @@
         var span = document.getElementsByClassName("close")[0];
 
         // Add click event listener to images
-        document.querySelectorAll("article img").forEach(img => {
-            img.onclick = function() {
+        document.querySelectorAll(".img-container").forEach(container => {
+            container.onclick = function() {
                 modal.style.display = "block";
-                modalImg.src = this.src;
-                var article = this.closest('article');
+                var img = container.querySelector('img');
+                modalImg.src = img.src;
+                var article = container.closest('article');
                 modalTitle.innerText = article.querySelector('h3').innerText;
                 modalSubtitle.innerText = article.querySelector('h4') ? article.querySelector('h4').innerText : '';
                 modalDesc.innerText = article.querySelector('.modal-text').innerText;
