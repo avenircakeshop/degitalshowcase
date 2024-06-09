@@ -80,17 +80,17 @@
     <script>
         // Get modal element
         var modal = document.getElementById("myModal");
-
+    
         // Get the modal content elements
         var modalImg = document.getElementById("modalImg");
         var modalTitle = document.getElementById("modalTitle");
         var modalSubtitle = document.getElementById("modalSubtitle");
         var modalDesc = document.getElementById("modalDesc");
         var modalExtraText = document.getElementById("modalExtraText");
-
+    
         // Get the close button element
         var span = document.getElementsByClassName("close")[0];
-
+    
         // Add click event listener to images
         document.querySelectorAll(".img-container").forEach(container => {
             container.onclick = function() {
@@ -104,18 +104,30 @@
                 modalExtraText.innerText = article.querySelector('.modal-extra-text') ? article.querySelector('.modal-extra-text').innerText : '';
             }
         });
-
+    
         // Close the modal when the user clicks on <span> (x)
         span.onclick = function() {
             modal.style.display = "none";
         }
-
+    
         // Close the modal when the user clicks anywhere outside of the modal
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
+    
+        // Show the overlay for 1 second on page load
+        window.onload = function() {
+            document.querySelectorAll('.img-container').forEach(container => {
+                container.classList.add('show-overlay');
+            });
+            setTimeout(() => {
+                document.querySelectorAll('.img-container').forEach(container => {
+                    container.classList.remove('show-overlay');
+                });
+            }, 1000); // 1秒後に非表示にする
+        }
     </script>
-</body>
+    </body>
 </html>
