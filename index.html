@@ -3,27 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avenir</title>
+    <title>デジタルショーケース</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XH59YMLM7R"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XH59YMLM7R');
+</script>
+
 <body>
-    <header>
-        <h1 class="title">DIGITAL SHOWCASE</h1>
-        <hr class="title-underline">
-        <nav>
-            <ul>
-                <li><a href="#section1"><i class="fas fa-birthday-cake"></i> プティガトー</a></li>
-                <li><a href="#section2"><i class="fas fa-bread-slice"></i> ヴィノェワズリ</a></li>
-                <li><a href="#section3"><i class="fa-solid fa-star"></i> 限定商品</a></li>
-            </ul>
-        </nav>
-    </header>
+        <!-- header -->
+<!-- header -->
+<header>
+    <h1 class="title">DIGITAL SHOWCASE</h1>
+</header>
+
+    <!-- header -->
+
     <main>
+        <div class="overlay"></div>
+
+        <button class="burger-btn">
+            <span class="bar bar_top"></span>
+            <span class="bar bar_mid"></span>
+            <span class="bar bar_bottom"></span>
+        </button>
+
+        <!-- ハンバーガーメニューがタップされた後に表示するアイコン -->
+        <div class="icon-wrapper">
+            <button class="icon-btn" id="cake-icon">
+                <span class="icon-text">プティガトー</span>
+                <img src="https://avenir-cake.com/showcase/assets/cake.svg" alt="Cake Icon">
+            </button>
+            <button class="icon-btn" id="bread-icon">
+                <span class="icon-text">ヴィエノワズリ</span>
+                <img src="https://avenir-cake.com/showcase/assets/bread.svg" alt="Bread Icon">
+            </button>
+            <button class="icon-btn" id="favorite-icon">
+                <span class="icon-text">各店舗限定商品</span>
+                <img src="https://avenir-cake.com/showcase/assets/star.svg" alt="Star Icon">
+            </button>
+        </div>
+
         <section id="section1">
-            <p>※材料の仕入れにより販売状況は異なります</p>
-            <p>※ケーキの飾りは撮影時点のものです</p>    
             <h2>プティガトー</h2>
             <div class="grid-container">
                 <article>
@@ -158,26 +188,6 @@
                 </article>
                 <article>
                     <div class="img-container">
-                        <img src="https://avenir-cake.com/images/savaran.png" alt="サバラン" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>サバラン</h3>
-                    <p class="modal-text">ブリオッシュにラム酒入りシロップを染み込ませた大人のお菓子</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/melon.png" alt="メロンバスケット" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>メロンバスケット</h3>
-                    <p class="modal-text">メロン半玉分を贅沢に使った当店の春夏のロングセラー商品</p>
-                </article>
-                <article>
-                    <div class="img-container">
                         <img src="https://avenir-cake.com/images/happy.png" alt="ハッピーケーキ" class="clickable">
                         <div class="overlay">
                             <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
@@ -185,16 +195,6 @@
                     </div>
                     <h3>ハッピーケーキ</h3>
                     <p class="modal-text">卵を使っていない真っ白なスポンジのショートケーキ（卵を使用している工場で製造しております）</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/pistche.png" alt="グリオットピスターシュ" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>グリオットピスターシュ</h3>
-                    <p class="modal-text">ピスタチオのババロアの間にグリオット（さくらんぼ）のジュレを挟みました</p>
                 </article>
                 <article>
                     <div class="img-container">
@@ -208,6 +208,37 @@
                 </article>
                 <article>
                     <div class="img-container">
+                        <img src="https://avenir-cake.com/images/momoshort.png" alt="桃ショート" class="clickable">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                        </div>
+                    </div>
+                    <h3>桃ショート</h3>
+                    <p class="modal-text">旬のみずみずしい桃を使ったショートケーキ</p>
+                </article>
+                <article>
+                    <div class="img-container">
+                        <img src="https://avenir-cake.com/images/momochan.png" alt="ももちゃん" class="clickable">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                        </div>
+                    </div>
+                    <h3>ももちゃん</h3>
+                    <p class="modal-text">ジューシーな旬の桃の中にカスタードをつかったクリームをたっぷり詰めた夏季限定の人気商品</p>
+                </article>
+                <article>
+                    <div class="img-container">
+                        <img src="https://avenir-cake.com/images/purple.png" alt="長野パープルのミルフィーユ" class="clickable">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                        </div>
+                    </div>
+                    <h3>長野パープルのミルフィーユ</h3>
+                    <p class="modal-text">実が大きくてジューシーな長野パープルとシャインマスカットを使ったミルフィーユ</p>
+                </article>
+
+                <article>
+                    <div class="img-container">
                         <img src="https://avenir-cake.com/images/vivi.png" alt="ビビ" class="clickable">
                         <div class="overlay">
                             <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
@@ -218,23 +249,34 @@
                 </article>
                 <article>
                     <div class="img-container">
-                        <img src="https://avenir-cake.com/images/tropical.png" alt="トロピカル" class="clickable">
+                        <img src="https://avenir-cake.com/images/shine.jpg" alt="シャインマスカットのタルト" class="clickable">
                         <div class="overlay">
                             <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
                         </div>
                     </div>
-                    <h3>トロピカル</h3>
-                    <p class="modal-text">ココナッツムースの間にマンゴムースとパッションフルーツのクリームをサンドしたケーキ</p>
+                    <h3>シャインマスカットのタルト</h3>
+                    <p class="modal-text">ジューシーで自然の甘みを感じられる旬のシャインマスカットを使った贅沢タルト</p>
                 </article>
                 <article>
                     <div class="img-container">
-                        <img src="https://avenir-cake.com/images/mangotarte.jpeg" alt="国産マンゴータルト" class="clickable">
+                        <img src="https://avenir-cake.com/images/ichiziku.jpeg" alt="いちじくのタルト" class="clickable">
                         <div class="overlay">
                             <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
                         </div>
                     </div>
-                    <h3>国産マンゴータルト</h3>
-                    <p class="modal-text">国産マンゴーを贅沢にのせたタルト</p>
+                    <h3>いちじくのタルト</h3>
+                    <p class="modal-text">やわらかいジューシーないちじくの果肉をたくさん使った夏のタルト</p>
+                </article>
+                <article>
+                    <div class="img-container">
+                        <img src="https://avenir-cake.com/images/tiramisu.jpg" alt="ティラミス" class="clickable">
+                        <div class="overlay">
+                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                        </div>
+                    </div>
+                    <h3>ティラミス</h3>
+                    <p class="modal-text">マスカルポーネチーズとコーヒーシロップを染み込ませた定番のデザート(果物は季節によって変わります) 
+                    </p>
                 </article>
             </div>
         </section>
@@ -242,240 +284,324 @@
 
         <!-- ヴィノェワズリ -->
         <section id="section2">
-            <h2>ヴィノェワズリ</h2>
+            <h2>ヴィエノワズリー</h2>
             <p>毎朝パティシエが焼いています</p>
-            <div class="grid-container">
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/croisaint.png" alt="クロワッサン" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                <div class="grid-container">
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/croisaint.png" alt="クロワッサン" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
                         </div>
-                    </div>
-                    <h3>クロワッサン</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">外はサクッと、中はふわっとした香ばしいクロワッサン</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/panochocola.png" alt="パンオショコラ" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                        <h3>クロワッサン</h3>
+                        <h4>本店限定</h4>
+                        <p class="modal-text">外はサクッと、中はふわっとした香ばしいクロワッサン</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/panochocola.png" alt="パンオショコラ" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
                         </div>
-                    </div>
-                    <h3>パンオショコラ</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">ジュワッとバター広がるデニッシュと程よい甘さのチョコレートの相性が抜群の人気商品</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/denish.png" alt="マスカルポーネデニッシュラズベリー" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                        <h3>パンオショコラ</h3>
+                        <h4>本店限定</h4>
+                        <p class="modal-text">ジュワッとバター広がるデニッシュと程よい甘さのチョコレートの相性が抜群の人気商品</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/denish.png" alt="マスカルポーネデニッシュラズベリー" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
                         </div>
-                    </div>
-                    <h3>マスカルポーネデニッシュラズベリー</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">甘酸っぱいラズベリーの入ったマスカルポーネクリームを詰め込んだファンの多い一品</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/canele.png" alt="カヌレ" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                        <h3>マスカルポーネデニッシュラズベリー</h3>
+                        <h4>本店限定</h4>
+                        <p class="modal-text">甘酸っぱいラズベリーの入ったマスカルポーネクリームを詰め込んだファンの多い一品</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/canele.png" alt="カヌレ" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
                         </div>
-                    </div>
-                    <h3>カヌレ</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">ラム酒の効いた外はカリッと中はモチっとした香ばしい西洋菓子</p>
-                </article>
-            </div>
+                        <h3>カヌレ</h3>
+                        <h4>本店限定</h4>
+                        <p class="modal-text">ラム酒の効いた外はカリッと中はモチっとした香ばしい西洋菓子</p>
+                    </article>
+                </div>
         </section>
         <!-- ヴィノェワズリここまで -->
 
-        <!-- 限定商品 -->
+            <!-- 限定商品 -->
         <section id="section3">
-            <h2></h2>
-            <div class="grid-container">
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/kocha.jpg" alt="紅茶とグレープフルーツのショート" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>紅茶とグレープフルーツのショート</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">紅茶のクリームとスポンジを使い、グレープフルーツのジュレをサンドしたさっぱりとしたショート</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/cherry.jpeg" alt="アメリカンチェリーのミルフィーユ" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>アメリカンチェリーのミルフィーユ</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">旬なアメリカンチェリーを贅沢に使用してピスタチオのスポンジとクリームをサンドしました</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/blueberry.jpeg" alt="ブルーベリーミルフィーユ" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>ブルーベリーミルフィーユ</h3>
-                    <h4>大府店限定</h4>
-                    <p class="modal-text">サクサクのパイとプチプチ食感のブルーベリーを贅沢に使用したミルフィーユ</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/ogura.png" alt="小倉パイ" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>小倉パイ</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">表面をキャラメリゼしたパイに特製生クリームとあんこをサンドした食べやすいスイーツ</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/banana.png" alt="バナナパイ" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>バナナパイ</h3>
-                    <h4>大府店限定</h4>
-                    <p class="modal-text">その日に焼いたサクサクのパイとバナナ、カスタード、生クリームを挟んだシンプルに美味しいスイーツ</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/sfre.jpeg" alt="焼きたてスフレチーズ" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>焼きたてスフレチーズ</h3>
-                    <h4>大府店限定</h4>
-                    <p class="modal-text">ふわふわとした生地とジュワッと広がる程よい酸味のチーズケーキ。オリジナルの焼印を押しています</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/ichigo-milk.png" alt="かき氷 贅沢いちごミルク" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>かき氷 贅沢いちごミルク</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">いちごのコンポート、練乳、生クリームが合わさった贅沢ないちごのかき氷</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/mango-purin.png" alt="かき氷 マンゴープリン" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>かき氷 マンゴープリン</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">マンゴーを贅沢に使ったカラメルとカスタードのソースでプリン風味に仕上げたかき氷</p>
-                </article>
-                <article>
-                    <div class="img-container">
-                        <img src="https://avenir-cake.com/images/uzi.png" alt="かき氷 宇治金時" class="clickable">
-                        <div class="overlay">
-                            <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
-                        </div>
-                    </div>
-                    <h3>かき氷 宇治金時</h3>
-                    <h4>本店限定</h4>
-                    <p class="modal-text">濃厚な抹茶シロップと小豆、きなこが相性抜群のかき氷</p>
-                </article>
+                <h2>各店限定商品</h2>
+                <div class="grid-container">
 
-            </div>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/kocha.jpg" alt="紅茶とグレープフルーツのショート" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>紅茶とグレープフルーツのショート</h3>
+                        <h4>本店限定</h4>
+                        <p class="modal-text">紅茶のクリームとスポンジを使い、グレープフルーツのジュレをサンドしたさっぱりとしたショート</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/citron.jpg" alt="シチリア" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>シチリア</h3>
+                        <h4>本店限定</h4>
+                        <p class="modal-text">ヨーグルトムースの中にレモンソースとジャスミンブリュレを入れた夏らしい清涼感たっぷりのケーキ</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/furufuru.jpg" alt="フルフル" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>フルフル</h3>
+                        <h4>大府店限定</h4>
+                        <p class="modal-text">ピンクグレープの果肉とグレープフルーツ果汁を使用したムースを一緒に食べる爽やかなデザート</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/sanlemo.jpg" alt="サンレモ" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>サンレモ</h3>
+                        <h4>大府店限定</h4>
+                        <p class="modal-text">ふわっとしたスポンジ生地に生クリームと季節のフルーツを包み込んだ軽いケーキ</p>
+                    </article>
+
+
+
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/banana.png" alt="バナナパイ" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>バナナパイ</h3>
+                        <h4>大府店限定</h4>
+                        <p class="modal-text">その日に焼いたサクサクのパイとバナナ、カスタード、生クリームを挟んだシンプルに美味しいスイーツ</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/sfre.jpeg" alt="焼きたてスフレチーズ" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>焼きたてスフレチーズ</h3>
+                        <h4>大府店限定</h4>
+                        <p class="modal-text">ふわふわとした生地とジュワッと広がる程よい酸味のチーズケーキ。オリジナルの焼印を押しています</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/ichigo-milk.png" alt="かき氷 贅沢いちごミルク" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>かき氷 贅沢いちごミルク</h3>
+                        <h4>本店限定</h4>
+                        <p class="modal-text">いちごのコンポート、練乳、生クリームが合わさった贅沢ないちごのかき氷</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/peachtea.jpeg" alt="かき氷 ピーチティー" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>かき氷 ピーチティー</h3>
+                        <h4>本店限定</h4>
+                        <p class="modal-text">紅茶ソースをたっぷり染み込ませ、桃のコンポートと果肉を使った桃のかき氷</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/uzi.png" alt="かき氷 宇治金時" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>かき氷 宇治金時</h3>
+                        <h4>本店限定</h4>
+                        <p class="modal-text">濃厚な抹茶シロップと小豆、きなこが相性抜群のかき氷</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/ichigopis.jpeg" alt="かき氷 いちごとピスタチオ" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>かき氷 いちごとピスタチオ</h3>
+                        <h4>大府店限定</h4>
+                        <p class="modal-text">いちごのコンポートとピスタチオソースをつかったソフトクリームかき氷</p>
+                    </article>
+                    <article>
+                        <div class="img-container">
+                            <img src="https://avenir-cake.com/images/bluecheese.jpeg" alt="かき氷 ぶるーべりーとチーズ" class="clickable">
+                            <div class="overlay">
+                                <i class="fas fa-search-plus"></i> <span>タップして拡大</span>
+                            </div>
+                        </div>
+                        <h3>かき氷 ぶるーべりーとチーズ</h3>
+                        <h4>大府店限定</h4>
+                        <p class="modal-text">ブルーベリーのコンポートとチーズソースをつかったソフトクリームかき氷</p>
+                    </article>
+
+
+                </div>
         </section>
+            <p class="cautions">※材料の仕入れにより販売状況は異なります</p>
+            <p class="cautions">※ケーキの飾りは撮影時点のものです</p>    
 
-    </main>
-    <footer>
-        <p>© AVENIR. All Rights Reserved.</p>
-        <p>その他の情報は以下のInstagramで更新中です：</p>
-        <ul>
-            <li><a href="https://www.instagram.com/avenir.cake/" target="_blank"><i class="fab fa-instagram"></i> 本店</a></li>
-            <li><a href="https://www.instagram.com/avenir.aube/" target="_blank"><i class="fab fa-instagram"></i> 大府店</a></li>
-        </ul>
-    </footer>
+        </main>
+        
+        <footer>
+            <p>&copy; AVENIR. All Rights Reserved.</p>
+            <p>その他の情報は以下のInstagramで更新中です：</p>
+            <ul>
+                <li><a href="https://www.instagram.com/avenir.cake/" target="_blank"><i class="fab fa-instagram"></i> インスタグラムはこちら</a></li>
+            </ul>
+        </footer>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-body">
-                <img id="modalImg" src="" alt="">
-                <h3 id="modalTitle"></h3>
-                <h4 id="modalSubtitle"></h4>
-                <hr class="modal-hr">
-                <p id="modalDesc"></p>
-                <p id="modalExtraText"></p>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-body">
+                    <img id="modalImg" src="" alt="">
+                    <h3 id="modalTitle"></h3>
+                    <h4 id="modalSubtitle"></h4>
+                    <hr class="modal-hr">
+                    <p id="modalDesc"></p>
+                    <p id="modalExtraText"></p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        // Get modal element
-        var modal = document.getElementById("myModal");
-    
-        // Get the modal content elements
-        var modalImg = document.getElementById("modalImg");
-        var modalTitle = document.getElementById("modalTitle");
-        var modalSubtitle = document.getElementById("modalSubtitle");
-        var modalDesc = document.getElementById("modalDesc");
-        var modalExtraText = document.getElementById("modalExtraText");
-    
-        // Get the close button element
-        var span = document.getElementsByClassName("close")[0];
-    
-        // Add click event listener to images
-        document.querySelectorAll(".img-container").forEach(container => {
-            container.onclick = function() {
-                modal.style.display = "block";
-                var img = container.querySelector('img');
-                modalImg.src = img.src;
-                var article = container.closest('article');
-                modalTitle.innerText = article.querySelector('h3').innerText;
-                modalSubtitle.innerText = article.querySelector('h4') ? article.querySelector('h4').innerText : '';
-                modalDesc.innerText = article.querySelector('.modal-text').innerText;
-                modalExtraText.innerText = article.querySelector('.modal-extra-text') ? article.querySelector('.modal-extra-text').innerText : '';
-            }
-        });
-    
-        // Close the modal when the user clicks on <span> (x)
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-    
-        // Close the modal when the user clicks anywhere outside of the modal
-        window.onclick = function(event) {
-            if (event.target == modal) {
+        <script>
+            // Get modal element
+            var modal = document.getElementById("myModal");
+        
+            // Get the modal content elements
+            var modalImg = document.getElementById("modalImg");
+            var modalTitle = document.getElementById("modalTitle");
+            var modalSubtitle = document.getElementById("modalSubtitle");
+            var modalDesc = document.getElementById("modalDesc");
+            var modalExtraText = document.getElementById("modalExtraText");
+        
+            // Get the close button element
+            var span = document.getElementsByClassName("close")[0];
+        
+            // Add click event listener to images
+            document.querySelectorAll(".img-container").forEach(container => {
+                container.onclick = function() {
+                    modal.style.display = "block";
+                    var img = container.querySelector('img');
+                    modalImg.src = img.src;
+                    var article = container.closest('article');
+                    modalTitle.innerText = article.querySelector('h3').innerText;
+                    modalSubtitle.innerText = article.querySelector('h4') ? article.querySelector('h4').innerText : '';
+                    modalDesc.innerText = article.querySelector('.modal-text').innerText;
+                    modalExtraText.innerText = article.querySelector('.modal-extra-text') ? article.querySelector('.modal-extra-text').innerText : '';
+                }
+            });
+        
+            // Close the modal when the user clicks on <span> (x)
+            span.onclick = function() {
                 modal.style.display = "none";
             }
-        }
-    
-        // Show the overlay for 1 second on page load
-        window.onload = function() {
-            document.querySelectorAll('.img-container').forEach(container => {
-                container.classList.add('show-overlay');
-            });
-            setTimeout(() => {
-                document.querySelectorAll('.img-container').forEach(container => {
-                    container.classList.remove('show-overlay');
+        
+            // Close the modal when the user clicks anywhere outside of the modal
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        
+        
+            document.addEventListener("DOMContentLoaded", function () {
+                const burgerBtn = document.querySelector(".burger-btn");
+                const iconWrapper = document.querySelector(".icon-wrapper");
+                const overlay = document.querySelector(".overlay");
+                const body = document.body;
+
+                // ハンバーガーメニューのクリックイベント
+                burgerBtn.addEventListener("click", function () {
+                    this.classList.toggle("close"); // ハンバーガーメニューのアニメーション
+                    iconWrapper.classList.toggle("show"); // アイコンの表示切替
+                    if (iconWrapper.classList.contains("show")) {
+                        overlay.style.display = "block"; // オーバーレイを表示
+                        body.classList.add("noscroll"); // スクロール禁止
+                        body.classList.add("overlay-active"); // article タップ禁止
+                    } else {
+                        overlay.style.display = "none"; // オーバーレイを非表示
+                        body.classList.remove("noscroll"); // スクロール解除
+                        body.classList.remove("overlay-active"); // article タップ許可
+                    }
                 });
-            }, 1000); // 1秒後に非表示にする
-        }
-    </script>
+
+                // 各アイコンボタンのクリックイベント
+                document.querySelectorAll(".icon-btn").forEach(function (iconBtn) {
+                    iconBtn.addEventListener("click", function () {
+                        iconWrapper.classList.remove("show"); // アイコンを非表示
+                        overlay.style.display = "none"; // オーバーレイを非表示
+                        body.classList.remove("noscroll"); // スクロール解除
+                        body.classList.remove("overlay-active"); // article タップ許可
+                        burgerBtn.classList.remove("close"); // ハンバーガーメニューを閉じる
+                    });
+                });
+
+                // オーバーレイのクリックイベント
+                overlay.addEventListener("click", function () {
+                    iconWrapper.classList.remove("show"); // アイコンを非表示
+                    overlay.style.display = "none"; // オーバーレイを非表示
+                    body.classList.remove("noscroll"); // スクロール解除
+                    body.classList.remove("overlay-active"); // article タップ許可
+                    burgerBtn.classList.remove("close"); // ハンバーガーメニューを閉じる
+                    });
+            });
+
+                // 閉じるボタンがクリックされたとき
+                document.querySelectorAll('.close-btn').forEach(closeBtn => {
+                    closeBtn.addEventListener("click", function() {
+                        burgerBtn.classList.remove("close");
+                        navWrapper.classList.remove("fade");
+                        document.body.classList.remove("noscroll");
+                    });
+                });
+    
+                    // 各アイコンボタンに対してセクションへのスクロールを設定
+                document.getElementById('cake-icon').addEventListener('click', function() {
+                    document.getElementById('section1').scrollIntoView({ behavior: 'smooth' });
+                });
+
+                document.getElementById('bread-icon').addEventListener('click', function() {
+                    document.getElementById('section2').scrollIntoView({ behavior: 'smooth' });
+                });
+
+                document.getElementById('favorite-icon').addEventListener('click', function() {
+                    document.getElementById('section3').scrollIntoView({ behavior: 'smooth' });
+                });
+        </script>
+                        
     </body>
 </html>
