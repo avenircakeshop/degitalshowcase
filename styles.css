@@ -5,8 +5,8 @@ body {
 }
 
 header {
-    background-color: #595959;
-    color: rgb(255, 255, 255);
+    background-color: #ffea00;
+    color: rgb(0, 0, 0);
     padding: 1rem;
     position: fixed;
     width: 100%;
@@ -14,65 +14,162 @@ header {
     left: 0;
     z-index: 1000;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    box-sizing: border-box; /* Add this line */
+    justify-content: center; /* 画面の中央に配置 */
+    box-sizing: border-box;
+    transition: background-color 0.5s ease;
 }
 
 header .title {
     margin: 0;
     font-size: 1.5rem;
-    text-align: center;
     letter-spacing: 0.2rem;
     font-weight: 400;
+    position: relative;
+    z-index: 1002;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-header p {
-    border: 0; /* Remove border from header paragraphs */
-    margin: 0.5rem 0; /* Add some margin for spacing */
-    font-size: 1rem; /* Set the desired font size */
-}
-
-header .title-underline {
+/* オーバーレイのスタイル */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 300px;
-    height: 2px;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    margin: 0.5rem 0;
+    height: 100%;
+    background-color: rgba(251, 255, 0, 0.666);
+    z-index: 999;
+    display: none;
+    box-sizing: border-box; /* 隙間防止のため追加 */
 }
 
-nav {
-    width: 100%;
+/* 全体のボックスサイズの計算をborder-boxに統一 */
+* {
+    box-sizing: border-box;
+}
+
+/* オーバーレイが表示されている時に article のタップを禁止 */
+.overlay-active article {
+    pointer-events: none; /* article タップ禁止 */
+}
+
+/* ハンバーガーメニューを右下に固定する */
+.burger-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffea00; /* 背景色 */
+    border-radius: 50%;
     display: flex;
     justify-content: center;
-    box-sizing: border-box; /* Add this line */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 1rem;
-    margin: 0; /* Add this line to remove default margin */
-    flex-wrap: wrap; /* Add this line to wrap items if they overflow */
-    justify-content: center; /* Add this line to center the items */
-}
-
-nav a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    display: flex;
     align-items: center;
+    z-index: 1001;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    border: 3px solid #454545; /* 枠の色をここで指定 */
 }
 
-nav a i {
-    margin-right: 0.5rem;
+.icon-wrapper {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end; /* テキストとアイコンを右揃え */
+    gap: 15px;
+    z-index: 1000;
 }
+
+.icon-btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ffea00;
+    border: 3px solid #454545;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icon-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-text {
+    position: absolute;
+    right: 110%; /* アイコンの外にテキストを配置 */
+    white-space: nowrap;
+    font-size: 16px; /* アイコンに合わせたテキストサイズ */
+    color: #000; /* テキストカラーを黒に設定 */
+    line-height: 50px; /* アイコンと垂直に揃えるため */
+}
+
+/* ハンバーガーメニューをタップ後に表示するアニメーション */
+.icon-wrapper.show {
+    display: flex;
+}
+
+.icon-btn {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.icon-wrapper.show .icon-btn {
+    animation: iconAppear 0.3s forwards ease;
+}
+
+@keyframes iconAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.bar {
+    width: 25px;
+    height: 2px;
+    background-color: #454545;
+    margin: 4px 0; /* バーの間にスペースを追加 */
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ハンバーガーメニューを開いたときのアニメーション */
+.burger-btn.close .bar_top {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.burger-btn.close .bar_mid {
+    opacity: 0;
+}
+
+.burger-btn.close .bar_bottom {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* メニューを開いたときにスクロールを止める */
+body.noscroll {
+    overflow: hidden;
+}
+/* メニューを開いたときにスクロールを止める */
+body.noscroll {
+    overflow: hidden;
+}
+
 
 main {
-    padding: 1rem;
-    padding-top: 6rem; /* Added padding to account for fixed header */
+    padding: 0 1rem;
+    padding-top: 1rem;
 }
 
 section {
@@ -80,7 +177,7 @@ section {
 }
 
 #section1 {
-    padding-top: 3rem; /* Added padding to ensure section1 does not overlap with the header */
+    padding-top: 3rem;
 }
 
 .grid-container {
@@ -97,9 +194,9 @@ section {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 1rem; /* Add margin to separate image from text */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .img-container .overlay {
@@ -130,22 +227,22 @@ h2 {
 h3 {
     text-align: center;
     font-size: 1.5rem;
-    margin-bottom: 0; /* Remove bottom margin from h3 */
+    margin-bottom: 0;
 }
 
 h3 + * {
-    margin-top: 0; /* Remove top margin from the element immediately following h3 */
+    margin-top: 0;
 }
 
 h4 {
     text-align: center;
-    margin: 0; /* Remove top and bottom margin */
-    padding: 0.5rem 0; /* Add some padding for spacing */
+    margin: 0;
+    padding: 0.5rem 0;
 }
 
 article {
     padding: 1rem;
-    margin-bottom: 0.2rem; /* Reduced margin bottom to half its size */
+    margin-bottom: 0.2rem;
 }
 
 footer {
@@ -188,44 +285,50 @@ footer p {
     margin: 0.5rem 0;
 }
 
-.modal-text,
-.modal-extra-text {
-    display: none; /* Hide modal text by default */
+.cautions{
+    text-align: center;
 }
 
-/* Modal styles */
+
+
+.modal-text,
+.modal-extra-text {
+    display: none;
+}
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 30px;
+    width: 80%;
     max-width: 600px;
     position: relative;
-    animation: fadeIn 0.5s; /* Add fadeIn animation */
+    animation: fadeIn 0.5s;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: scale(0.9); /* Slightly shrink the modal */
+        transform: scale(0.9);
     }
     to {
         opacity: 1;
-        transform: scale(1); /* Return to normal size */
+        transform: scale(1);
     }
 }
 
@@ -250,6 +353,7 @@ footer p {
 .modal-body img {
     max-width: 100%;
     height: auto;
+    border-radius: 20px;
     margin-bottom: 1rem;
 }
 
@@ -258,25 +362,20 @@ footer p {
 }
 
 .modal-hr {
-    width: 50%; /* Adjust width as needed */
-    margin: 0 auto 1rem auto; /* Center the hr and add bottom margin */
+    width: 50%;
+    margin: 0 auto 1rem auto;
 }
 
-/* Media query for mobile devices */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Stack articles vertically on mobile devices */
+        grid-template-columns: 1fr;
     }
     
     article {
-        margin-bottom: 0.5rem; /* Reduce margin between articles */
+        margin-bottom: 0.5rem;
     }
 
     header .title {
-        font-size: 1.2rem; /* Adjust font size for smaller screens */
-    }
-
-    header .title-underline {
-        max-width: 200px; /* Adjust underline width for smaller screens */
+        font-size: 1.2rem;
     }
 }
